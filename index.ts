@@ -55,3 +55,22 @@ year: 2020
 let y: string | number = 22
 type occupation = "employed" | "student"
 let jackOccupation: occupation = "student"
+
+//type assertion
+let z: any = "a"
+y = <number> 22
+
+//functions
+function add(x:number, y:number):number {
+  return x + y
+}
+
+add(12,34)
+
+function sayHi(): void {
+  console.log("hi")
+}
+
+function copyArr<T>(arr: T[]): T[] {
+  return [...arr]
+}

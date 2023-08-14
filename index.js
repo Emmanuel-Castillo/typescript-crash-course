@@ -31,3 +31,17 @@ let newCar = {
 //union: lets a variable hold more than one value
 let y = 22;
 let jackOccupation = "student";
+//type assertion
+let z = "a";
+y = 22;
+//functions
+function add(x, y) {
+    return x + y;
+}
+add(12, 34);
+function sayHi() {
+    console.log("hi");
+}
+function copyArr(arr) {
+    return [...arr];
+}
