@@ -28,6 +28,12 @@ let employees: [number, string][] = [
 ]
 
 //objects
+
+//let car = {
+//   brand: string,
+//   year: number
+//}
+
 //custom types
 
 type Car = {
@@ -53,6 +59,7 @@ year: 2020
 
 //union: lets a variable hold more than one value
 let y: string | number = 22
+
 type occupation = "employed" | "student"
 let jackOccupation: occupation = "student"
 
@@ -71,6 +78,34 @@ function sayHi(): void {
   console.log("hi")
 }
 
+//using generics: T -> placeholder
 function copyArr<T>(arr: T[]): T[] {
   return [...arr]
 }
+
+let numCopy = copyArr<number>([1,2,3])
+let strCopy = copyArr<string>(["1","2","3"])
+
+//enums
+enum EyeColor {
+  brown = "Common eye color",
+  blue = "Rare eye color",
+  green = "Very rare eye color"
+}
+
+interface Student{
+  name: string,
+  age: number,
+  eyecolor?: EyeColor
+}
+
+function displayStudent(student: Student):void {
+  const info: string = student.name + "\n" + student.age + "\n" + student.eyecolor
+
+  document.body.innerText = info
+}
+
+displayStudent({
+  name: "Jack",
+  age: 20,
+})

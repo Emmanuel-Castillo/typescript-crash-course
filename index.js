@@ -42,6 +42,24 @@ add(12, 34);
 function sayHi() {
     console.log("hi");
 }
+//using generics: T -> placeholder
 function copyArr(arr) {
     return [...arr];
 }
+let numCopy = copyArr([1, 2, 3]);
+let strCopy = copyArr(["1", "2", "3"]);
+//enums
+var EyeColor;
+(function (EyeColor) {
+    EyeColor["brown"] = "Common eye color";
+    EyeColor["blue"] = "Rare eye color";
+    EyeColor["green"] = "Very rare eye color";
+})(EyeColor || (EyeColor = {}));
+function displayStudent(student) {
+    const info = student.name + "\n" + student.age + "\n" + student.eyecolor;
+    document.body.innerText = info;
+}
+displayStudent({
+    name: "Jack",
+    age: 20,
+});
